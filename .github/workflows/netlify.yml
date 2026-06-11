@@ -1,6 +1,10 @@
 name: install-netlify-package
 
-on: [push]
+on:
+
+  push:
+
+ 
 
 jobs:
 
@@ -10,10 +14,28 @@ jobs:
 
     steps:
 
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v1
+ 
 
-      - run: npm install netlify-cli -g
+      - name: Setup Node.js
 
-      - run: npm netlify -v
+        uses: actions/setup-node@v4
+
+        with:
+
+          node-version: "20"
+
+ 
+
+      - name: Install Netlify CLI
+
+        run: npm install -g netlify-cli
+
+ 
+
+      - name: Show Netlify version
+
+        run: netlify –version
+
+ 
