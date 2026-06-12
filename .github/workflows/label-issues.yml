@@ -1,37 +1,19 @@
 name: Label issues
 
- 
-
 on:
-
   issues:
-
     types: [opened, reopened]
 
- 
-
 permissions:
-
   issues: write
 
- 
-
 jobs:
-
   label_issues:
-
     runs-on: ubuntu-latest
-    permissions:
-      issues: write
 
     steps:
-           - name: Label issues
-  # You may pin to the exact commit or the version.
-  # uses: andymckay/labeler@e6c4322d0397f3240f0e7e30a33b5c5df2d39e90
-  uses: andymckay/labeler@1.0.4
-  with:
-    # The GitHub token
-    repo-token: ${{ secrets.GITHUB_TOKEN }}
-    # Labels to add to an issue, seperated by commas.
-    add-labels: "triage"
-          
+      - name: Label issues
+        uses: andymckay/labeler@1.0.4
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          add-labels: "triage"
