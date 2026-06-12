@@ -36,6 +36,6 @@ jobs:
 
       - name: Show Netlify version
 
-        run: netlify –v
+        run: netlify --version
 
  
